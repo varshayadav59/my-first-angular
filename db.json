@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "users":[
     {
       "name":"Anil",
@@ -24,3 +25,30 @@
   ]
   
   }
+=======
+"users":[
+  {
+    "name":"Anil",
+    "age":29,
+    "email":"anil@test.com"
+  },
+  {
+    "name":"varsha",
+    "age":23,
+    "email":"varsha@test.com"
+  },
+
+  {
+    "name":"Bruce",
+    "age":45,
+    "email":"bruce@test.com"
+  },
+  {
+    "name":"Anil",
+    "age":31,
+    "email":"tony@test.com"
+  }
+]
+
+}
+>>>>>>> 15a1a59e2a47ee01db74212fe7b11c29f44ce64b
