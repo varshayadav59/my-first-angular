@@ -3,8 +3,24 @@
   {
     "name":"Anil",
     "age":29,
-    "email"
+    "email":"anil@test.com"
   },
+  {
+    "name":"varsha",
+    "age":23,
+    "email":"varsha@test.com"
+  },
+
+  {
+    "name":"Bruce",
+    "age":45,
+    "email":"bruce@test.com"
+  },
+  {
+    "name":"Anil",
+    "age":31,
+    "email":"tony@test.com"
+  }
 ]
 
 }
