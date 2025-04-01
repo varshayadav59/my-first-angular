@@ -1,12 +1,14 @@
 import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CommonModule, NgFor, NgIf, NgSwitch, NgSwitchDefault } from '@angular/common';
+import { HeaderComponent } from './header/header.component';
+import { FormControl, ReactiveFormsModule,FormGroup, FormsModule, NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterLink,LoginComponent, ProfileComponent, NgIf, NgFor,NgSwitch,CommonModule,NgSwitchDefault],
+  imports: [RouterOutlet,LoginComponent, ProfileComponent, NgIf, NgFor,NgSwitch,CommonModule,NgSwitchDefault,HeaderComponent,ReactiveFormsModule,FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -30,14 +32,14 @@ export class AppComponent {
   }
   //counter App
   count = 0
-  handleIncrement() {
+  handleIncrement() {0
     this.count = this.count + 1
   }
 
   handleDecrement() {
     this.count = this.count - 1
   }
-  handleReset() {
+  handleReset() {4
     this.count = 0
   }
 
@@ -238,6 +240,42 @@ updateBlock(){
   this.color=color
  }
   */
+/*
+ name=new FormControl('');
+ password=new FormControl('');
+
+ displayValue(){
+  console.log(this.name.value,this.password.value);
+ }
+ setValues(){
+  this.name.setValue('peter');
+  this.password.setValue('123')
+ }
+  */
+ /*
+ profileForm=new FormGroup({
+  name:new FormControl('anil'),
+  password:new FormControl('123'),
+  email:new FormControl('anil@test.com'),
+ })
+
+ onSubmit(){
+  console.log(this.profileForm.value);
+ }
+ setValue(){
+  this.profileForm.setValue({
+    name:'peter',
+    password:'321',
+    email:"anil@test.com"
+  })
+ }
+  */
+ //template driven form
+ userDetails:any;
+addDetails(val:NgForm){
+  console.log(val);
+  this.userDetails=val;
+}
 }
 
 
