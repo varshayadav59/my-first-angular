@@ -382,8 +382,30 @@ let l=$last
 <h3>{{userData?.gender}}</h3>
 <h3>{{userData?.range}}</h3>
 -->
+<!--
 <br>
 <h1>Custom Pipe in Angular</h1>
 <h2>{{amount | currencyConvertor}}</h2>
 <h2>{{100 | currencyConvertor:12}}</h2>
 <h2>{{amount | currencyConvertor:5}}</h2>
+-->
+<!--
+<br>
+<h1>Life Cycle Methods in Angular</h1>
+<button (click)="updateCounter()">Count:{{counter}}</button>
+<div *ngIf="counter!=5">
+  <app-user1 [counter]="counter" #user1></app-user1>
+</div>
+-->
+<br>
+
+<h1>Call API with Service in Angular</h1>
+@for(product of productList;track product.id){
+  <ul>
+    <li><b>Name:</b>{{product.title}}</li>
+    <li><b>Price:</b>{{product.price}}</li>
+    <li><b>Rating:</b>{{product.rating}}</li>
+    <li><b>Category:</b>{{product.category}}</li>
+    <li><img src="{{product.thumbnail}}" alt=""></li>
+  </ul>
+}

@@ -1,4 +1,4 @@
-import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
+import { Component, computed, effect, Signal, signal, ViewChild, WritableSignal,afterRender,afterNextRender } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -6,10 +6,12 @@ import { CommonModule, NgFor, NgIf, NgSwitch, NgSwitchDefault } from '@angular/c
 import { HeaderComponent } from './header/header.component';
 import { FormControl, ReactiveFormsModule,FormGroup, FormsModule, NgForm} from '@angular/forms';
 import { CurrencyConvertorPipe } from './pipe/currency-convertor.pipe';
+import { User1Component } from './user1/user1.component';
+import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,LoginComponent, ProfileComponent, NgIf, NgFor,NgSwitch,CommonModule,NgSwitchDefault,HeaderComponent,ReactiveFormsModule,FormsModule,CurrencyConvertorPipe],
+  imports: [RouterOutlet,LoginComponent,User1Component,ProfileComponent, NgIf, NgFor,NgSwitch,CommonModule,NgSwitchDefault,HeaderComponent,ReactiveFormsModule,FormsModule,CurrencyConvertorPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -279,5 +281,39 @@ addUser(val:NgForm){
   this.userData=val;
 }
   */
+ /*
  amount=10
+ */
+/*
+@ViewChild('user1') User1Component:any
+counter=0
+constructor(){
+  afterRender(()=>{
+    console.log("afterRender",this.User1Component.counter);
+  })
+  afterNextRender(()=>{
+    console.log(" afterNextRender",this.User1Component.counter);
+  })
+
+}
+
+updateCounter(){
+  this.counter++;
+}
+  */
+ /*
+constructor( private productService:ProductService){
+
+}
+*/
+productList:any
+constructor(private productService:ProductService){
+  }
+ngOnInit(){
+  this.productService.getProductList().subscribe((data:any)=>{
+    console.log(data);
+    this.productList=data.products
+  })
+}
+
 }
