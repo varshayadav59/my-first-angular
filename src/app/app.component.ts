@@ -5,10 +5,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { CommonModule, NgFor, NgIf, NgSwitch, NgSwitchDefault } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FormControl, ReactiveFormsModule,FormGroup, FormsModule, NgForm} from '@angular/forms';
+import { CurrencyConvertorPipe } from './pipe/currency-convertor.pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,LoginComponent, ProfileComponent, NgIf, NgFor,NgSwitch,CommonModule,NgSwitchDefault,HeaderComponent,ReactiveFormsModule,FormsModule],
+  imports: [RouterOutlet,LoginComponent, ProfileComponent, NgIf, NgFor,NgSwitch,CommonModule,NgSwitchDefault,HeaderComponent,ReactiveFormsModule,FormsModule,CurrencyConvertorPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -270,12 +271,13 @@ updateBlock(){
   })
  }
   */
+ /*
  //template driven form
- userDetails:any;
-addDetails(val:NgForm){
+ userData:any;
+addUser(val:NgForm){
   console.log(val);
-  this.userDetails=val;
+  this.userData=val;
 }
+  */
+ amount=10
 }
-
-
