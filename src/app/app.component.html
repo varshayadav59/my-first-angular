@@ -290,21 +290,61 @@ let l=$last
   <h1 *ngSwitchDefault >No Color Match</h1>
 </div>
 -->
+<!--
 <br>
-<h1>Basic Routing in Angular</h1>
-
-<ul>
-  <li>
-    <a routerLink="/login">Login</a>
-  </li>
-
-  <li>
-    <a routerLink="/about">About</a>
-  </li>
-
-  <li>
-    <a routerLink="/contact">Contact</a>
-  </li>
-</ul>
+<app-header></app-header>
 <router-outlet></router-outlet>
+-->
+<!--
+<h1>Basics of Reactive Forms</h1>
+<form>
+  <input type="text" placeholder="Enter Name" [formControl]="name">
+  <br><br>
+  <input type="text" placeholder="Enter Password" [formControl]="password">
+  <br><br>
+  <button type="button" (click)="displayValue()">Login</button>
+  <button type="button" (click)="setValues()">Set values in Field</button>
+  <h3>{{ name.value }}</h3>
+  <h3>{{ password.value }}</h3>
+</form>
+-->
+<!--
+<h1>Grouping in Reactive Forms</h1>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Enter Name" formControlName="name">
+  <br><br>
+  <input type="text" placeholder="Enter Password" formControlName="password">
+  <br><br>
+  <input type="text" placeholder="Enter email" formControlName="email">
+  <br><br>
+  <button>Submit</button>
+  <button type="button" (click)="setValue()">Set Value</button>
+ 
+</form>
 
+<h1>{{this.profileForm.value.email}}</h1>
+<h1>{{this.profileForm.value.name}}</h1>
+<h1>{{this.profileForm.value.password}}</h1>
+-->
+<br>
+<h1>Template Driven Forms</h1>
+<form #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+  <input type="text" placeholder="Enter Name" name="name" ngModel>
+  <br><br>
+  <input type="password" placeholder="Enter Password" name="password" ngModel>
+  <br><br>
+  <select name="gender" ngModel>
+    <option value="">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <button>Submit</button>
+  </select>
+  <br><br>
+  <input type="range" min="0" max="20" name="range" ngModel>
+  <br><br>
+<button>Add User</button>
+</form>
+<h3>{{userDetails?.name}}</h3>
+<h3>{{userDetails?.password}}</h3>
+<h3>{{userDetails?.gender}}</h3>
+<h3>{{userDetails?.range}}</h3>
